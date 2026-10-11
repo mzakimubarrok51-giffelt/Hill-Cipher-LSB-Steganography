@@ -47,7 +47,7 @@ if option == "Introduction":
     from content.hill_cipher import hill_cipher
     from content.lsb_method import lsb
 
-    st.header("Intoduction")
+    st.header("Introduction")
     option = option_menu(
         menu_title="Did you know?",
         options=["Hill Cipher", "Least Significant Bit"],
