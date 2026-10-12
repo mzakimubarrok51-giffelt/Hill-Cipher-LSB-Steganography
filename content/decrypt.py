@@ -37,6 +37,78 @@ def decryption():
 
         return key
 
+    def inverse_matrix(K):
+        """
+        Hitung invers matriks K modulo 26 menggunakan
+        rumus: K⁻¹ = (1/det(K)) × adj(K) mod 26
+
+        Return: (K_inv, det, det_inv) atau None jika gagal.
+        """
+        n = K.shape[0]
+        det = int(round(np.linalg.det(K)))
+
+        # Cari invers determinan modulo 26
+        det_mod = det % 26
+        try:
+            det_inv = pow(det_mod, -1, 26)
+        except ValueError:
+            st.error(
+                f"Determinan = {det} (mod 26 = {det_mod}) "
+                f"tidak memiliki invers modulo 26. "
+                f"Matriks K tidak dapat di-invers."
+            )
+            return None, det, None
+
+        # Hitung matriks kofaktor
+        cofactor = np.zeros((n, n), dtype=int)
+        for i in range(n):
+            for j in range(n):
+                minor = np.delete(np.delete(K, i, axis=0), j, axis=1)
+                cofactor[i, j] = ((-1) ** (i + j)) * int(round(np.linalg.det(minor)))
+
+        # Adjoin = transpose dari kofaktor
+        adj = cofactor.T
+
+        # K⁻¹ = det_inv × adj mod 26
+        K_inv = (det_inv * adj) % 26
+        K_inv = np.array(K_inv, dtype=int)
+
+        return K_inv, det, det_inv
+        
+    def display_inverse_steps(K, det, det_inv, K_inv):
+        st.subheader("3. Invers Matriks K (K⁻¹ mod 26)")
+
+        st.markdown(
+            "Rumus invers matriks modulo 26:"
+        )
+        st.latex(
+            r"K^{-1} = \dfrac{1}{\det(K)} \cdot \text{adj}(K) \pmod{26}"
+        )
+
+        # Tampilkan determinan
+        col1, col2 = st.columns(2)
+        with col1:
+            st.metric("det(K)", det)
+        with col2:
+            st.metric("det(K)⁻¹ mod 26", det_inv)
+
+        # Tampilkan K⁻¹
+        st.markdown("**Hasil K⁻¹:**")
+        display_matrix(K_inv)
+
+        # Verifikasi K · K⁻¹ ≡ I (mod 26)
+        st.markdown("**Verifikasi:** $K \\cdot K^{-1} \\pmod{26}$")
+        identity_check = (K @ K_inv) % 26
+        display_matrix(identity_check)
+
+        if np.array_equal(identity_check, np.eye(K.shape[0], dtype=int)):
+            st.success("Verifikasi berhasil: K · K⁻¹ = I (mod 26)")
+        else:
+            st.warning(
+                "Hasil perkalian bukan matriks identitas. "
+                "Periksa kembali matriks K."
+            )
+
     def ciphertext_matrix():
         text = st.text_area(
             "Ketik ciphertext:",
@@ -139,6 +211,35 @@ def decryption():
 
         # Decrypt
         P = decrypt(K, C)
+
+
+    K_inv = None
+    if K is not None:
+        K_inv, det, det_inv = inverse_matrix(K)
+        if K_inv is not None:
+            display_inverse_steps(K, det, det_inv, K_inv)
+
+    st.subheader("2. Ciphertext")
+    C = ciphertext_matrix()
+
+    st.divider()
+
+    if st.button("Decrypt", type="primary"):
+
+        if K is None:
+            st.error("Key matrix tidak valid.")
+            st.stop()
+
+        if K_inv is None:
+            st.error("Invers matriks K tidak valid. Tidak dapat mendekripsi.")
+            st.stop()
+
+        if len(C) == 0:
+            st.error("Ciphertext tidak boleh kosong.")
+            st.stop()
+
+        # Decrypt menggunakan K⁻¹ (bukan K)
+        P = decrypt(K_inv, C)
 
         st.subheader("Result Matrix")
 
