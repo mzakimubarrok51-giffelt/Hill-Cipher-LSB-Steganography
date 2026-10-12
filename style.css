@@ -252,3 +252,14 @@ button[kind="secondary"] * {
     height: auto !important;
     border-radius: 8px;
 }
+
+@media (prefers-color-scheme: dark) {
+    [data-testid="stSidebar"] > div:first-child,
+    section[data-testid="stSidebar"],
+    [data-testid="stSidebar"] {
+        background-color: rgb(14, 17, 23) !important;
+    }
+    [data-testid="stSidebar"] * {
+        color: #e6e6e6 !important;
+    }
+}
