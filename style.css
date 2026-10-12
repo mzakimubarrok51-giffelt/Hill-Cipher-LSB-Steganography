@@ -1,3 +1,138 @@
+/* =========================================================
+   PAKSA TEMA TERANG — netralkan mode gelap browser/OS
+   ========================================================= */
+
+/* 1. Override variabel tema Streamlit agar selalu terang */
+:root,
+[data-theme="light"],
+[data-theme="dark"],
+.stApp {
+    --background-color: #ffffff !important;
+    --secondary-background-color: #f0f2f6 !important;
+    --text-color: #1a1a1a !important;
+    --primary-color: #ff4b4b !important;
+    --font: "Source Sans Pro", sans-serif !important;
+}
+
+/* 2. Background aplikasi tetap pakai wallpaper + overlay putih */
+[data-testid="stApp"] {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)),
+        url("https://wallpaperaccess.com/full/6302899.jpg") !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+}
+
+/* 3. Paksa semua teks di area konten jadi hitam */
+[data-testid="stAppViewContainer"],
+[data-testid="stAppViewContainer"] h1,
+[data-testid="stAppViewContainer"] h2,
+[data-testid="stAppViewContainer"] h3,
+[data-testid="stAppViewContainer"] h4,
+[data-testid="stAppViewContainer"] h5,
+[data-testid="stAppViewContainer"] h6,
+[data-testid="stAppViewContainer"] p,
+[data-testid="stAppViewContainer"] span,
+[data-testid="stAppViewContainer"] label,
+[data-testid="stAppViewContainer"] li,
+[data-testid="stAppViewContainer"] div,
+[data-testid="stAppViewContainer"] small,
+[data-testid="stAppViewContainer"] strong,
+[data-testid="stAppViewContainer"] em,
+[data-testid="stMarkdownContainer"],
+[data-testid="stMarkdownContainer"] *,
+[data-testid="stHeadingWithActionElements"],
+[data-testid="stHeadingWithActionElements"] *,
+[data-testid="stWidgetLabel"],
+[data-testid="stWidgetLabel"] * {
+    color: #1a1a1a !important;
+}
+
+/* 4. Input, textarea, select */
+[data-testid="stAppViewContainer"] input,
+[data-testid="stAppViewContainer"] textarea,
+[data-testid="stAppViewContainer"] select,
+[data-testid="stAppViewContainer"] .stTextInput input,
+[data-testid="stAppViewContainer"] .stTextArea textarea,
+[data-testid="stAppViewContainer"] .stNumberInput input {
+    color: #1a1a1a !important;
+    background-color: #ffffff !important;
+    border: 1px solid #cccccc !important;
+}
+
+/* Placeholder */
+[data-testid="stAppViewContainer"] input::placeholder,
+[data-testid="stAppViewContainer"] textarea::placeholder {
+    color: #888888 !important;
+    opacity: 1 !important;
+}
+
+/* 5. Link tetap biru agar kelihatan bisa diklik */
+[data-testid="stAppViewContainer"] a,
+[data-testid="stAppViewContainer"] a * {
+    color: #0066cc !important;
+}
+
+/* 6. Sidebar — paksa background putih & teks hitam */
+[data-testid="stSidebar"],
+[data-testid="stSidebar"] * {
+    color: #1a1a1a !important;
+}
+[data-testid="stSidebar"] {
+    background-color: #ffffff !important;
+}
+
+/* 7. Tombol */
+button[kind="primary"] {
+    background-color: #ff4b4b !important;
+}
+button[kind="primary"],
+button[kind="primary"] * {
+    color: #ffffff !important;
+}
+button[kind="secondary"] {
+    background-color: #ffffff !important;
+    border: 1px solid #cccccc !important;
+}
+button[kind="secondary"],
+button[kind="secondary"] * {
+    color: #1a1a1a !important;
+}
+
+/* 8. Rumus LaTeX (matriks, K⁻¹) tetap hitam */
+.katex,
+.katex * {
+    color: #1a1a1a !important;
+}
+
+/* 9. Metric & Alert */
+[data-testid="stMetricValue"],
+[data-testid="stMetricValue"] * {
+    color: #0d47a1 !important;
+}
+[data-testid="stMetricLabel"],
+[data-testid="stMetricLabel"] * {
+    color: #444444 !important;
+}
+[data-testid="stAlert"],
+[data-testid="stAlert"] * {
+    color: #1a1a1a !important;
+}
+
+/* 10. Expander, tab, dan komponen lain yang sering terlewat */
+[data-testid="stExpander"],
+[data-testid="stExpander"] *,
+[data-testid="stTabs"],
+[data-testid="stTabs"] *,
+[data-testid="stCaptionContainer"],
+[data-testid="stCaptionContainer"] *,
+[data-testid="stCodeBlock"],
+[data-testid="stCodeBlock"] * {
+    color: #1a1a1a !important;
+}
+
 .topbar{
     width: 100%;
     display: flex;
