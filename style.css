@@ -96,7 +96,7 @@ section[data-testid="stSidebar"] {
 [data-theme="dark"] [data-testid="stSidebar"] > div:first-child,
 [data-theme="dark"] section[data-testid="stSidebar"],
 [data-theme="dark"] [data-testid="stSidebar"] {
-    background-color: rgb(14, 17, 23) !important;
+    background-color: rgb(38, 39, 40) !important;
 }
 
 /* 4. Teks sidebar menyesuaikan tema */
@@ -257,7 +257,7 @@ button[kind="secondary"] * {
     [data-testid="stSidebar"] > div:first-child,
     section[data-testid="stSidebar"],
     [data-testid="stSidebar"] {
-        background-color: rgb(38, 39, 40) !important;
+        background-color: rgb(14, 17, 23) !important;
     }
     [data-testid="stSidebar"] * {
         color: #e6e6e6 !important;
