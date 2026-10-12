@@ -7,7 +7,7 @@ def lsb():
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
     # ── Header ──
-    st.html("""
+    st.markdown("""
     <h4>🏞️ LSB (Least Significant Bit)</h4>
     <div style="display: flex; margin-bottom: 10px">
         <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*4rATbGfDEv74zNtKk2HwyQ.png">
@@ -23,10 +23,10 @@ def lsb():
     <p>
         LSB termasuk steganografi, bukan algoritma enkripsi. Pesan yang disisipkan tidak otomatis terenkripsi.
     </p>
-    """)
+    """, unsafe_allow_html=True)
 
     # ── Konsep LSB ──
-    st.html("""
+    st.markdown("""
     <h4>📖 Memahami Konsep Least Significant Bit</h4>
     <div style="display: flex; justify-content: space-between">
         <div>
@@ -53,11 +53,11 @@ def lsb():
     <p>
         Susunan bit dari kiri ke kanan adalah sebagai berikut:
     </p>
-    """)
+    """, unsafe_allow_html=True)
 
     st.image("assets/lsb1.png")
 
-    st.html("""
+    st.markdown("""
     <p>
         LSB adalah bit paling kanan, yaitu bit dengan bobot nilai 1.
         Perubahan bit tersebut hanya mengubah nilai desimal sebesar 1.
@@ -70,14 +70,14 @@ def lsb():
         bit tersebut dapat dimanfaatkan untuk menyisipkan informasi
         rahasia.
     </p>
-    """)
+    """, unsafe_allow_html=True)
 
     # ── Cara Kerja LSB ──
-    st.html("<h4>🙋‍♂️ Bagaimana cara kerja LSB?</h4>")
-    st.html("<p>Secara umum, proses LSB terdiri dari tiga tahap.</p>")
+    st.markdown("<h4>🙋‍♂️ Bagaimana cara kerja LSB?</h4>", unsafe_allow_html=True)
+    st.markdown("<p>Secara umum, proses LSB terdiri dari tiga tahap.</p>", unsafe_allow_html=True)
 
     # Card 1
-    st.html("""
+    st.markdown("""
     <div class="dark-card" style="background-color: #000; display: flex; border-radius: 10px; padding: 10px; margin-bottom: 10px;">
         <img src="https://images.openai.com/static-rsc-4/vYfLkrbI7PFINKDmtp-Tr0kvNqzuoA2ve13bvw7sMeW07DTUR76GZ1ze_gpNkVC6GsGlbvpDcQMpdorer71y8p5W7vGsZeSTYckf2UuuPiufg85qOaYTn3NHbsqUt41ARPDRIVnlXdiHUQvdgz9t7dCCYSwf3q1ddd1lz12IBpsx4Bd4vz2SJo_cINAeKpFt?purpose=fullsize"
             width="110" style="margin-left: 10px;">
@@ -86,13 +86,13 @@ def lsb():
             <p>Gambar asli yang akan digunakan sebagai media penyisipan pesan. Gambar ini disebut <em>cover image.</em></p>
         </div>
     </div>
-    """)
+    """, unsafe_allow_html=True)
 
     # Arrow
-    st.html('<div style="font-size: 50px; text-align: center; color: #000;">&#11015;</div>')
+    st.markdown('<div style="font-size: 50px; text-align: center; color: #000;">&#11015;</div>', unsafe_allow_html=True)
 
     # Card 2
-    st.html("""
+    st.markdown("""
     <div class="dark-card" style="background-color: #000; display: flex; border-radius: 10px; padding: 10px; margin-bottom: 10px;">
         <img src="https://images.openai.com/static-rsc-4/x53CBMsL8LDuL8C1s4uW2Y84W4eZb-h9zrdC-HcHmsfhVf1md2iCNt6Yz6nh2P_Hg1I2fy69XI72s658LKaFZB7RjXpmRl-YAJfGeUv-C2NIJ0Ygea7A1PbpOiY0aqOHOXSlHiQe_sJ_I88kZD93Z7ufxy8oxSdWO8B0HRuJjKYsjWPPHkQSHDIgorzr_OlV?purpose=fullsize"
             width="110" style="margin-left: 10px;">
@@ -101,13 +101,13 @@ def lsb():
             <p>Pesan diubah menjadi bit 0 dan 1. Bit pesan kemudian digunakan untuk mengganti LSB dari nilai piksel gambar.</p>
         </div>
     </div>
-    """)
+    """, unsafe_allow_html=True)
 
     # Arrow
-    st.html('<div style="font-size: 50px; text-align: center; color: #000;">&#11015;</div>')
+    st.markdown('<div style="font-size: 50px; text-align: center; color: #000;">&#11015;</div>', unsafe_allow_html=True)
 
     # Card 3
-    st.html("""
+    st.markdown("""
     <div class="dark-card" style="background-color: #000; display: flex; border-radius: 10px; padding: 10px; margin-bottom: 10px;">
         <img src="https://images.openai.com/static-rsc-4/6kOJAJW4C8IQkD_f26P3shqn4sOOb02oKIi8V67YDsfgCeWWEE1xQ-Tdi8c3xZu2UrBhy6EhILnP81-6bI16lpKgfXy75DZ-V819Ezq3VnH8l5SIw_HoIYP1rtpKheNrB_FYpUU-p-nxCBVZVXlOlOcwa4ynaeo8iKBbbYG4shcuAcVi9i5Q3ptsO1mxcUWk?purpose=fullsize"
             width="110" style="margin-left: 10px;">
@@ -116,10 +116,10 @@ def lsb():
             <p>Gambar hasil penyisipan disebut <em>stego image.</em> Penerima membaca kembali bit-bit yang telah disisipkan untuk mendapatkan pesan.</p>
         </div>
     </div>
-    """)
+    """, unsafe_allow_html=True)
 
     # ── Ekstraksi Pesan ──
-    st.html("""
+    st.markdown("""
     <h4>🙋🏻‍♀️ Lalu bagaimana proses ekstraksi pesan?</h4>
     <p>
         Ekstraksi adalah proses mengambil pesan dari stego image.
@@ -139,36 +139,36 @@ def lsb():
         Pada metode LSB sederhana, penerima perlu mengetahui aturan urutan piksel dan jumlah bit yang dibaca.
         Informasi panjang pesan juga perlu ditentukan, misalnya disimpan sebagai header atau ditetapkan sebelumnya.
     </p>
-    """)
+    """, unsafe_allow_html=True)
 
     # ── Kapasitas ──
-    st.html("""
+    st.markdown("""
     <h4>🙋‍♂️ Berapa banyak pesan yang dapat disisipkan?</h4>
     <p>
         Untuk gambar RGB berukuran W × H, jika setiap komponen warna menyimpan satu bit pesan,
         kapasitas teoritisnya adalah:
     </p>
-    """)
+    """, unsafe_allow_html=True)
 
     st.latex(r"""
     \large\begin{aligned}
         C &= W \times H \times 3 \text{ bit}
     \end{aligned}
-    """)
+    """, unsafe_allow_html=True)
 
-    st.html("""
+    st.markdown("""
     <p>
         Karena satu karakter ASCII umumnya membutuhkan 8 bit, perkiraan kapasitas karakter adalah:
     </p>
-    """)
+    """, unsafe_allow_html=True)
 
     st.latex(r"""
     \begin{aligned}
         N &= \frac{W \times H \times 3}{8}
     \end{aligned}
-    """)
+    """, unsafe_allow_html=True)
 
-    st.html("""
+    st.markdown("""
     <p>
         Contoh gambar berukuran 100 × 100 piksel:
     </p>
@@ -182,13 +182,13 @@ def lsb():
         Angka tersebut adalah kapasitas maksimum teoritis untuk skema satu LSB per komponen RGB,
         sebelum memperhitungkan header, penanda akhir pesan, atau kebutuhan lain.
     </p>
-    """)
+    """, unsafe_allow_html=True)
 
     # ── Jenis-jenis LSB ──
-    st.html('<h4>📌 Jenis-jenis metode LSB</h4>')
+    st.markdown('<h4>📌 Jenis-jenis metode LSB</h4>', unsafe_allow_html=True)
 
     # Card A — LSB Replacement
-    st.html("""
+    st.markdown("""
     <div style="background-color: rgb(225, 225, 225); display: flex; border-radius: 10px; margin-bottom: 10px; color: #000;">
         <img src="https://images.openai.com/static-rsc-4/IzK5aceiP0Mw2tU6zLjT0TskTUiGISmB-H8jnBTRHSCclwYqGy-_M_N94nHgZ7a87Tqr0E4hBohDMsD2YGe5kNIEAiyqlTFIJ4pl7weThXSEvCZy8g00LHFyAo_KrlMKmPCDlWdCG6kjek6aOhVF0FzTJQ94zHiNTaJMp3bkKrga9nh08YbsALccccuBhEdG?purpose=fullsize"
             width="150" style="margin-left: 10px;">
@@ -202,10 +202,10 @@ def lsb():
             </p>
         </div>
     </div>
-    """)
+    """, unsafe_allow_html=True)
 
     # Card B — LSB Matching
-    st.html("""
+    st.markdown("""
     <div style="background-color: rgb(225, 225, 225); display: flex; border-radius: 10px; margin-top: 10px; color: #000;">
         <img src="https://images.openai.com/static-rsc-4/bY_Pt1NL4hYr2V5weCbZDB4zZg4NKOYDV9ulxXYonPa4CFZTkw-skSB1tbFlbAjfWW5u2Tc7OcfXDnonBW2Bune6_YBzTJRlfAPBPXNTmZS77YIJGIfFHTgUwecQHlzooFq88faTL5EbBclLStFZcFISMnVuzc0pHST-M26yrT_1916MPUJuK9n_6pHQJifB?purpose=fullsize"
             width="150" style="margin-left: 10px;">
@@ -220,10 +220,10 @@ def lsb():
             </p>
         </div>
     </div>
-    """)
+    """, unsafe_allow_html=True)
 
     # Card C — Adaptive / Edge-Based
-    st.html("""
+    st.markdown("""
     <div style="background-color: rgb(225, 225, 225); display: flex; border-radius: 10px; margin-top: 10px; color: #000;">
         <img src="https://images.openai.com/static-rsc-4/132wmsEVQ2Z6SQL5j9QRLCS1v8r-_u_PVKqK12OEpggl_YnHxOUPsh68brMIYFrD0-jbkJjajFyD_SK3RnqXVS2l5kWUD_HOAKGkAoyMBmhSWf5O8JlusKIyM7haqGBimmcMI4NBlJBA8-k6s75DP7GB6PQyvtAib9Ggq8_WRCRqo4AcjsRBcB3Etz3MNJ3b?purpose=fullsize"
             width="150" style="margin-left: 10px;">
@@ -238,10 +238,10 @@ def lsb():
             </p>
         </div>
     </div>
-    """)
+    """, unsafe_allow_html=True)
 
     # ── Tabel Kelebihan & Kekurangan ──
-    st.html("""
+    st.markdown("""
     <h4>📝 Kelebihan dan kekurangan LSB</h4>
     <table style="width: 100%; border-collapse: collapse;">
         <tr style="border: 2px solid #000; background-color: blue; color: #ffffff">
@@ -270,10 +270,10 @@ def lsb():
             <td style="border: 2px solid #000; padding: 6px;">Dapat merusak pesan jika piksel yang digunakan berubah</td>
         </tr>
     </table>
-    """)
+    """, unsafe_allow_html=True)
 
     # ── Referensi ──
-    st.html("""
+    st.markdown("""
     <h6><em>~ ~ Referensi ~ ~</em></h6>
     <ul type="none" style="font-size: 14px">
         <li><b>Rinaldi Munir - IF4020 Kriptografi</b>, <em>akses melalui: <a href="https://informatika.stei.itb.ac.id/~rinaldi.munir/Kriptografi/">https://informatika.stei.itb.ac.id/~rinaldi.munir/</a></em></li>
@@ -284,4 +284,4 @@ def lsb():
         <li><b>Scientific Reports - An improved hybrid image steganography method using AES algorithm</b>, <em>akses melalui: <a href="https://www.nature.com/articles/s41598-025-28140-0">https://nature.com/articles/</a></em></li>
     </ul>
     <h6 style="text-align: right"><em>~ ~ Thank You ~ ~</em></h6>
-    """)
+    """, unsafe_allow_html=True )
