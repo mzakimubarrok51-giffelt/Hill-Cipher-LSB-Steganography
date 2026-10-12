@@ -8,21 +8,35 @@ def encryption():
             min_value=2,
             max_value=5,
             value=2,
-            step=1
+            step=1,
+            key="enc_key_size"
         )
 
-        key = np.array([
-            list(map(int, st.text_input(
-                f"Ketik element baris {i + 1} pisahkan dengan spasi:",
-                key=f"key_row_{i}"
-            ).split()))
-            for i in range(size)
-        ])
+        raw_rows = []
+        for i in range(size):
+            raw_rows.append(
+                st.text_input(
+                    f"Ketik element baris {i + 1} pisahkan dengan spasi:",
+                    key=f"enc_key_row_{i}"
+                )
+            )
 
-        # Cek ukuran matriks
-        if any(len(row) != size for row in key):
-            st.error(f"Setiap baris harus memiliki {size} elemen.")
+        if any(r.strip() == "" for r in raw_rows):
+            st.info(f"ℹ️ Lengkapi semua {size} baris terlebih dahulu.")
             return None
+
+        try:
+            rows = [list(map(int, r.split())) for r in raw_rows]
+        except ValueError:
+            st.error("⚠️ Semua elemen harus berupa bilangan bulat. Contoh: 3 3")
+            return None
+
+        if any(len(row) != size for row in rows):
+            st.error(f"⚠️ Setiap baris harus memiliki tepat {size} elemen.")
+            return None
+
+        key = np.array(rows, dtype=int)
+
 
         # Tampilkan matriks
         display = r"\begin{bmatrix}"
@@ -127,7 +141,7 @@ def encryption():
 
     st.divider()
 
-    if st.button("Encrypt", type="primary"):
+    if st.button("Encrypt", type="primary", key="enc_button"):
 
         if K is None:
             st.error("Key matrix tidak valid.")
