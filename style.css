@@ -191,17 +191,30 @@ button[kind="secondary"] * {
     font-style: italic;
 }
 
-/* Card gelap kustom untuk halaman LSB */
+/* Semua teks di dalam .dark-card jadi putih, kecuali yang di-override */
 .dark-card,
 .dark-card * {
     color: #ffffff !important;
 }
 
-.dark-card .card-desc,
-.dark-card .card-desc * {
-    color: #cccccc !important;   /* abu terang untuk deskripsi */
+/* Deskripsi abu terang */
+.dark-card p,
+.dark-card em {
+    color: #cccccc !important;
 }
 
+/* Judul dengan background crimson — teks putih tebal */
 .dark-card .card-title {
+    background-color: crimson;
     color: #ffffff !important;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+/* Anak panah di antara card */
+.dark-card-arrow {
+    color: #000000 !important;
+    font-size: 50px;
+    text-align: center;
 }
