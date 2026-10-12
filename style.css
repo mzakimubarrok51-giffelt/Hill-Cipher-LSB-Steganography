@@ -7,8 +7,8 @@
 [data-theme="light"],
 [data-theme="dark"],
 .stApp {
-    --background-color: #ffffff !important;
-    --secondary-background-color: #f0f2f6 !important;
+    --background-color: transparent !important;
+    --secondary-background-color: rgba(240, 242, 246, 0.9) !important;
     --text-color: #1a1a1a !important;
     --primary-color: #ff4b4b !important;
     --font: "Source Sans Pro", sans-serif !important;
@@ -17,11 +17,10 @@
 /* 2. Background aplikasi tetap pakai wallpaper + overlay putih */
 [data-testid="stApp"] {
     background-image:
-        linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)),
+        linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
         url("https://wallpaperaccess.com/full/6302899.jpg") !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
     background-size: cover !important;
+    background-position: center !important;
     background-attachment: fixed !important;
 }
 
