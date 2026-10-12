@@ -63,46 +63,45 @@ def lsb():
     </p>
     
     <h4>🙋‍♂️ Bagaimana cara kerja LSB?</h4>
-    <p>
-        Secara umum, proses LSB terdiri dari tiga tahap.
-        <div class="dark-card">
-    <div style="background-color: #000; display: flex; border-radius: 10px; padding: 10px;">
-        <img src="https://images.openai.com/static-rsc-4/vYfLkrbI7PFINKDmtp-Tr0kvNqzuoA2ve13bvw7sMeW07DTUR76GZ1ze_gpNkVC6GsGlbvpDcQMpdorer71y8p5W7vGsZeSTYckf2UuuPiufg85qOaYTn3NHbsqUt41ARPDRIVnlXdiHUQvdgz9t7dCCYSwf3q1ddd1lz12IBpsx4Bd4vz2SJo_cINAeKpFt?purpose=fullsize" 
-        width="110" style="margin-left: 10px;">
-        <div style="margin-left: 10px">
-            <b class="card-title">1. Menyiapkan cover image</b>
-            <p>
-                Gambar asli yang akan digunakan sebagai media penyisipan pesan. Gambar ini disebut <em>cover image.</em>
-            </p>
+    <p>Secara umum, proses LSB terdiri dari tiga tahap.</p>
+    <div class="dark-card">
+        <div style="background-color: #000; display: flex; border-radius: 10px; padding: 10px;">
+            <img src="https://images.openai.com/static-rsc-4/vYfLkrbI7PFINKDmtp-Tr0kvNqzuoA2ve13bvw7sMeW07DTUR76GZ1ze_gpNkVC6GsGlbvpDcQMpdorer71y8p5W7vGsZeSTYckf2UuuPiufg85qOaYTn3NHbsqUt41ARPDRIVnlXdiHUQvdgz9t7dCCYSwf3q1ddd1lz12IBpsx4Bd4vz2SJo_cINAeKpFt?purpose=fullsize" 
+            width="110" style="margin-left: 10px;">
+            <div style="margin-left: 10px">
+                <b class="card-title">1. Menyiapkan cover image</b>
+                <p>
+                    Gambar asli yang akan digunakan sebagai media penyisipan pesan. Gambar ini disebut <em>cover image.</em>
+                </p>
+            </div>
+        </div>
+        
+        <div class="dark-card-arrow">&#11015;</div>
+        
+        <div style="background-color: #000; display: flex; border-radius: 10px; padding: 10px;">
+            <img src="https://images.openai.com/static-rsc-4/x53CBMsL8LDuL8C1s4uW2Y84W4eZb-h9zrdC-HcHmsfhVf1md2iCNt6Yz6nh2P_Hg1I2fy69XI72s658LKaFZB7RjXpmRl-YAJfGeUv-C2NIJ0Ygea7A1PbpOiY0aqOHOXSlHiQe_sJ_I88kZD93Z7ufxy8oxSdWO8B0HRuJjKYsjWPPHkQSHDIgorzr_OlV?purpose=fullsize" 
+            width="110" style="margin-left: 10px;">
+            <div style="margin-left: 10px">
+                <b class="card-title">2. Menyisipkan pesan</b>
+                <p>
+                    Pesan diubah menjadi bit 0 dan 1. Bit pesan kemudian digunakan untuk mengganti LSB dari nilai piksel gambar.
+                </p>
+            </div>
+        </div>
+        
+        <div class="dark-card-arrow">&#11015;</div>
+        
+        <div style="background-color: #000; display: flex; border-radius: 10px; padding: 10px;">
+            <img src="https://images.openai.com/static-rsc-4/6kOJAJW4C8IQkD_f26P3shqn4sOOb02oKIi8V67YDsfgCeWWEE1xQ-Tdi8c3xZu2UrBhy6EhILnP81-6bI16lpKgfXy75DZ-V819Ezq3VnH8l5SIw_HoIYP1rtpKheNrB_FYpUU-p-nxCBVZVXlOlOcwa4ynaeo8iKBbbYG4shcuAcVi9i5Q3ptsO1mxcUWk?purpose=fullsize" 
+            width="110" style="margin-left: 10px;">
+            <div style="margin-left: 10px">
+                <b class="card-title">3. Menghasilkan stego image</b>
+                <p>
+                    Gambar hasil penyisipan disebut <em>stego image.</em> Penerima membaca kembali bit-bit yang telah disisipkan untuk mendapatkan pesan.
+                </p>
+            </div>
         </div>
     </div>
-    
-    <div class="dark-card-arrow">&#11015;</div>
-    
-    <div style="background-color: #000; display: flex; border-radius: 10px; padding: 10px;">
-        <img src="https://images.openai.com/static-rsc-4/x53CBMsL8LDuL8C1s4uW2Y84W4eZb-h9zrdC-HcHmsfhVf1md2iCNt6Yz6nh2P_Hg1I2fy69XI72s658LKaFZB7RjXpmRl-YAJfGeUv-C2NIJ0Ygea7A1PbpOiY0aqOHOXSlHiQe_sJ_I88kZD93Z7ufxy8oxSdWO8B0HRuJjKYsjWPPHkQSHDIgorzr_OlV?purpose=fullsize" 
-        width="110" style="margin-left: 10px;">
-        <div style="margin-left: 10px">
-            <b class="card-title">2. Menyisipkan pesan</b>
-            <p>
-                Pesan diubah menjadi bit 0 dan 1. Bit pesan kemudian digunakan untuk mengganti LSB dari nilai piksel gambar.
-            </p>
-        </div>
-    </div>
-    
-    <div class="dark-card-arrow">&#11015;</div>
-    
-    <div style="background-color: #000; display: flex; border-radius: 10px; padding: 10px;">
-        <img src="https://images.openai.com/static-rsc-4/6kOJAJW4C8IQkD_f26P3shqn4sOOb02oKIi8V67YDsfgCeWWEE1xQ-Tdi8c3xZu2UrBhy6EhILnP81-6bI16lpKgfXy75DZ-V819Ezq3VnH8l5SIw_HoIYP1rtpKheNrB_FYpUU-p-nxCBVZVXlOlOcwa4ynaeo8iKBbbYG4shcuAcVi9i5Q3ptsO1mxcUWk?purpose=fullsize" 
-        width="110" style="margin-left: 10px;">
-        <div style="margin-left: 10px">
-            <b class="card-title">3. Menghasilkan stego image</b>
-            <p>
-                Gambar hasil penyisipan disebut <em>stego image.</em> Penerima membaca kembali bit-bit yang telah disisipkan untuk mendapatkan pesan.
-            </p>
-        </div>
-    </div>
-</div>
 
     <h4>🙋🏻‍♀️ Lalu bagaimana proses ekstraksi pesan?</h4>
     <p>
