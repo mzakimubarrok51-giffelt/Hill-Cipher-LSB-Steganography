@@ -1,42 +1,8 @@
 import numpy as np
 import streamlit as st
+from content.key_setup import key_setup, get_key
 
 def decryption():
-    def key_matrix():
-        size = st.number_input(
-            "Ukuran matriks n × n ",
-            min_value=2,
-            max_value=5,
-            value=2,
-            step=1
-        )
-
-        key = np.array([
-            list(map(int, st.text_input(
-                f"Ketik element baris {i + 1} pisahkan dengan spasi:",
-                key=f"key_row_{i}"
-            ).split()))
-            for i in range(size)
-        ])
-
-        # Cek ukuran matriks
-        if any(len(row) != size for row in key):
-            st.error(f"Setiap baris harus memiliki {size} elemen.")
-            return None
-
-        # Tampilkan matriks
-        display = r"\begin{bmatrix}"
-
-        for r in key:
-            display += " & ".join(map(str, r))
-            display += r" \\ "
-
-        display += r"\end{bmatrix}"
-
-        st.latex(display)
-
-        return key
-
     def inverse_matrix(K):
         """
         Hitung invers matriks K modulo 26 menggunakan
@@ -191,8 +157,8 @@ def decryption():
     with y: 
         st.image("https://media.tenor.com/QhRvvwpCdVoAAAAi/rocket.gif")
 
-    st.subheader("1. Key Matrix")
-    K = key_matrix()
+    key_setup()
+    K = get_key()
 
 
     K_inv = None

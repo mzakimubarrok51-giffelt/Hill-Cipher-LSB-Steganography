@@ -1,5 +1,8 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
+from content.key_setup import init_key_state
+
+init_key_state()
 
 st.markdown("""
     <link rel="stylesheet"

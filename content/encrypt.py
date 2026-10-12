@@ -1,56 +1,8 @@
 import numpy as np
 import streamlit as st
+from content.key_setup import key_setup, get_key
 
 def encryption():
-    def key_matrix():
-        size = st.number_input(
-            "Ukuran matriks n × n ",
-            min_value=2,
-            max_value=5,
-            value=2,
-            step=1,
-            key="enc_key_size"
-        )
-
-        raw_rows = []
-        for i in range(size):
-            raw_rows.append(
-                st.text_input(
-                    f"Ketik element baris {i + 1} pisahkan dengan spasi:",
-                    key=f"enc_key_row_{i}"
-                )
-            )
-
-        if any(r.strip() == "" for r in raw_rows):
-            st.info(f"ℹ️ Lengkapi semua {size} baris terlebih dahulu.")
-            return None
-
-        try:
-            rows = [list(map(int, r.split())) for r in raw_rows]
-        except ValueError:
-            st.error("⚠️ Semua elemen harus berupa bilangan bulat. Contoh: 3 3")
-            return None
-
-        if any(len(row) != size for row in rows):
-            st.error(f"⚠️ Setiap baris harus memiliki tepat {size} elemen.")
-            return None
-
-        key = np.array(rows, dtype=int)
-
-
-        # Tampilkan matriks
-        display = r"\begin{bmatrix}"
-
-        for r in key:
-            display += " & ".join(map(str, r))
-            display += r" \\ "
-
-        display += r"\end{bmatrix}"
-
-        st.latex(display)
-
-        return key
-
     def plaintext_matrix():
         text = st.text_area(
             "Ketik plaintext:",
@@ -133,8 +85,7 @@ def encryption():
     with y: 
         st.image("https://media.tenor.com/QhRvvwpCdVoAAAAi/rocket.gif")
 
-    st.subheader("1. Key Matrix")
-    K = key_matrix()
+    key_setup()
 
     st.subheader("2. Plaintext")
     P = plaintext_matrix()
@@ -142,7 +93,8 @@ def encryption():
     st.divider()
 
     if st.button("Encrypt", type="primary", key="enc_button"):
-
+        K = get_key()
+        
         if K is None:
             st.error("Key matrix tidak valid.")
             st.stop()
