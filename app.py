@@ -113,3 +113,15 @@ st.markdown("""
     </div>
 </div>
 """, unsafe_allow_html=True)
+
+st.set_page_config(
+    page_title="Hill Cipher - LSB Steganography",
+    page_icon="🚀",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        "Get Help": None,
+        "Report a bug": None,
+        "About": "Aplikasi Hill Cipher + LSB Steganography\n\n© 2026 Jaya Perkasa",
+    }
+)

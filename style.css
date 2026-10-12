@@ -253,16 +253,6 @@ button[kind="secondary"] * {
     border-radius: 8px;
 }
 
-/* Sembunyikan menu tiga titik */
-#MainMenu { visibility: hidden; }
-
-/* Sembunyikan footer "Made with Streamlit" */
-footer { visibility: hidden; }
-
-/* Sembunyikan toolbar Streamlit (Deploy, dll) */
-[data-testid="stToolbar"] { display: none !important; }
-[data-testid="stDecoration"] { display: none !important; }
-
 @media (prefers-color-scheme: dark) {
     [data-testid="stSidebar"] > div:first-child,
     section[data-testid="stSidebar"],
