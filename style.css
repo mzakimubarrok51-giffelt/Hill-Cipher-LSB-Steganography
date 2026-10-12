@@ -79,8 +79,38 @@
 [data-testid="stSidebar"] * {
     color: #1a1a1a !important;
 }
+
+/* 1. Wrapper luar sidebar (kolom pembungkus) */
+[data-testid="stSidebar"] > div:first-child,
+section[data-testid="stSidebar"] {
+    background-color: #ffffff !important;
+    transition: background-color 0.2s ease;
+}
+
+/* 2. Isi sidebar */
 [data-testid="stSidebar"] {
     background-color: #ffffff !important;
+}
+
+/* 3. Saat tema gelap */
+[data-theme="dark"] [data-testid="stSidebar"] > div:first-child,
+[data-theme="dark"] section[data-testid="stSidebar"],
+[data-theme="dark"] [data-testid="stSidebar"] {
+    background-color: rgb(14, 17, 23) !important;
+}
+
+/* 4. Teks sidebar menyesuaikan tema */
+[data-testid="stSidebar"] * {
+    color: #1a1a1a !important;
+}
+[data-theme="dark"] [data-testid="stSidebar"] * {
+    color: #e6e6e6 !important;
+}
+
+/* 5. Sidebar collapse button juga ikut */
+[data-testid="stSidebarCollapseButton"],
+[data-testid="stSidebarCollapseButton"] * {
+    color: inherit !important;
 }
 
 /* 7. Tombol */
@@ -165,10 +195,6 @@ button[kind="secondary"] * {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-[data-testid=stSidebar]{
-    color: rgb(225, 225, 225);
 }
 
 .footer{
