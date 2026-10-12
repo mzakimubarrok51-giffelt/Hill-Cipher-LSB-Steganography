@@ -194,6 +194,13 @@ def decryption():
     st.subheader("1. Key Matrix")
     K = key_matrix()
 
+
+    K_inv = None
+    if K is not None:
+        K_inv, det, det_inv = inverse_matrix(K)
+        if K_inv is not None:
+            display_inverse_steps(K, det, det_inv, K_inv)
+
     st.subheader("2. Ciphertext")
     C = ciphertext_matrix()
 
@@ -211,13 +218,6 @@ def decryption():
 
         # Decrypt
         P = decrypt(K, C)
-
-
-    K_inv = None
-    if K is not None:
-        K_inv, det, det_inv = inverse_matrix(K)
-        if K_inv is not None:
-            display_inverse_steps(K, det, det_inv, K_inv)
 
     st.subheader("2. Ciphertext")
     C = ciphertext_matrix()
