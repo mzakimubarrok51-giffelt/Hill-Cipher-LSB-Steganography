@@ -13,9 +13,9 @@ st.set_page_config(
     page_title="Hill Cipher - LSB Steganography",
     page_icon="🚀"
 )
-with open("style.css") as f:
+with open("style.css", encoding="utf-8") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
+    
 st.markdown("""
 <div class="topbar">
     <div class="topbar-title" style="font-size: 20px">🚀 Hill Cipher - LSB Steganography</div>
