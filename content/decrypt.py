@@ -201,23 +201,7 @@ def decryption():
         if K_inv is not None:
             display_inverse_steps(K, det, det_inv, K_inv)
 
-    st.subheader("2. Ciphertext")
-    C = ciphertext_matrix()
-
     st.divider()
-
-    if st.button("Decrypt", type="primary"):
-
-        if K is None:
-            st.error("Key matrix tidak valid.")
-            st.stop()
-
-        if len(C) == 0:
-            st.error("Ciphertext tidak boleh kosong.")
-            st.stop()
-
-        # Decrypt
-        P = decrypt(K, C)
 
     st.subheader("2. Ciphertext")
     C = ciphertext_matrix()
