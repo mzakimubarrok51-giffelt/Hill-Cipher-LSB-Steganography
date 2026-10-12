@@ -218,3 +218,11 @@ button[kind="secondary"] * {
     font-size: 50px;
     text-align: center;
 }
+
+/* Semua gambar di dalam konten: batasi lebar maksimum */
+[data-testid="stAppViewContainer"] img,
+[data-testid="stMarkdownContainer"] img {
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 8px;
+}
