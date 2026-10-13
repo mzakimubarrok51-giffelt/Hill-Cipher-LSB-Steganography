@@ -1,8 +1,5 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-from content.key_setup import init_key_state
-
-init_key_state()
 
 st.markdown("""
     <link rel="stylesheet"
@@ -13,9 +10,9 @@ st.set_page_config(
     page_title="Hill Cipher - LSB Steganography",
     page_icon="🚀"
 )
-with open("style.css", encoding="utf-8") as f:
+with open("style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-    
+
 st.markdown("""
 <div class="topbar">
     <div class="topbar-title" style="font-size: 20px">🚀 Hill Cipher - LSB Steganography</div>
@@ -40,37 +37,17 @@ with st.sidebar:
     st.image("https://media1.tenor.com/m/pXVD0uOHIncAAAAC/rocket-flying.gif")
     option = option_menu(
         menu_title="Menu",
-        options=["Introduction", "Cryptography", "Steganography", "About"],
-        icons=["book", "key", "image", "info-circle"],
+        options=["Introduction","Cryptography", "Steganography", "About"],
+        icons=["book","key", "image", "info-circle"],
         menu_icon="rocket",
         default_index=0,
-        styles={
-            "container": {
-                "padding": "0!important",
-                "background-color": "transparent",
-            },
-            "icon": {
-                "color": "#ff4b4b",
-                "font-size": "18px",
-            },
-            "nav-link": {
-                "font-size": "16px",
-                "text-align": "left",
-                "margin": "0px",
-                "--hover-color": "rgba(255, 75, 75, 0.1)",
-            },
-            "nav-link-selected": {
-                "background-color": "#ff4b4b",
-                "color": "white",
-            },
-        },
     )
 
 if option == "Introduction":
     from content.hill_cipher import hill_cipher
     from content.lsb_method import lsb
 
-    st.header("Introduction")
+    st.header("Intoduction")
     option = option_menu(
         menu_title="Did you know?",
         options=["Hill Cipher", "Least Significant Bit"],
@@ -133,15 +110,3 @@ st.markdown("""
     </div>
 </div>
 """, unsafe_allow_html=True)
-
-st.set_page_config(
-    page_title="Hill Cipher - LSB Steganography",
-    page_icon="🚀",
-    layout="wide",
-    initial_sidebar_state="expanded",
-    menu_items={
-        "Get Help": None,
-        "Report a bug": None,
-        "About": "Aplikasi Hill Cipher + LSB Steganography\n\n© 2026 Jaya Perkasa",
-    }
-)
