@@ -37,10 +37,11 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 with st.sidebar:
+    st.image("https://media1.tenor.com/m/pXVD0uOHIncAAAAC/rocket-flying.gif")
     option = option_menu(
         menu_title="Menu",
-        options=["Introduction", "Encryption", "Decryption", "About"],
-        icons=["book", "lock", "unlock", "info-circle"],
+        options=["Introduction", "Cryptography", "Steganography", "About"],
+        icons=["book", "key", "image", "info-circle"],
         menu_icon="rocket",
         default_index=0,
         styles={
