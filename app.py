@@ -37,13 +37,32 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 with st.sidebar:
-    st.image("https://media1.tenor.com/m/pXVD0uOHIncAAAAC/rocket-flying.gif")
     option = option_menu(
         menu_title="Menu",
-        options=["Introduction","Cryptography", "Steganography", "About"],
-        icons=["book","key", "image", "info-circle"],
+        options=["Introduction", "Encryption", "Decryption", "About"],
+        icons=["book", "lock", "unlock", "info-circle"],
         menu_icon="rocket",
         default_index=0,
+        styles={
+            "container": {
+                "padding": "0!important",
+                "background-color": "transparent",
+            },
+            "icon": {
+                "color": "#ff4b4b",
+                "font-size": "18px",
+            },
+            "nav-link": {
+                "font-size": "16px",
+                "text-align": "left",
+                "margin": "0px",
+                "--hover-color": "rgba(255, 75, 75, 0.1)",
+            },
+            "nav-link-selected": {
+                "background-color": "#ff4b4b",
+                "color": "white",
+            },
+        },
     )
 
 if option == "Introduction":
