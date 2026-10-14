@@ -3,40 +3,41 @@ import streamlit as st
 from content.key_setup import key_setup, get_key
 
 def decryption():
-    def inverse_matrix(K):def inverse_matrix(K):
-    """
-    Hitung invers matriks K modulo 26 menggunakan
-    rumus: K⁻¹ = (1/det(K)) × adj(K) mod 26
+    def inverse_matrix(K):
+        """
+        Hitung invers matriks K modulo 26 menggunakan
+        rumus: K⁻¹ = (1/det(K)) × adj(K) mod 26
 
-    Return: (K_inv, det, det_inv) atau None jika gagal.
-    """
-    n = K.shape[0]
-    det = int(round(np.linalg.det(K)))
+        Return: (K_inv, det, det_inv) atau None jika gagal.
+        """
+        n = K.shape[0]
+        det = int(round(np.linalg.det(K)))
 
-    # Cari invers determinan modulo 26
-    det_mod = det % 26
-    try:
-        det_inv = pow(det_mod, -1, 26)
-    except ValueError:
-        return None, det, None
+        # Cari invers determinan modulo 26
+        det_mod = det % 26
+        try:
+            det_inv = pow(det_mod, -1, 26)
+        except ValueError:
+            return None, det, None
 
-    # Hitung matriks kofaktor
-    cofactor = np.zeros((n, n), dtype=int)
-    for i in range(n):
-        for j in range(n):
-            minor = np.delete(np.delete(K, i, axis=0), j, axis=1)
-            cofactor[i, j] = ((-1) ** (i + j)) * int(round(np.linalg.det(minor)))
+        # Hitung matriks kofaktor
+        cofactor = np.zeros((n, n), dtype=int)
+        for i in range(n):
+            for j in range(n):
+                minor = np.delete(np.delete(K, i, axis=0), j, axis=1)
+                cofactor[i, j] = ((-1) ** (i + j)) * int(round(np.linalg.det(minor)))
 
-    # Adjoin = transpose dari kofaktor
-    adj = cofactor.T
+        # Adjoin = transpose dari kofaktor
+        adj = cofactor.T
 
-    # K⁻¹ = det_inv × adj mod 26
-    K_inv = (det_inv * adj) % 26
-    K_inv = np.array(K_inv, dtype=int)
+        # K⁻¹ = det_inv × adj mod 26
+        K_inv = (det_inv * adj) % 26
+        K_inv = np.array(K_inv, dtype=int)
 
-    return K_inv, det, det_inv
-        def display_inverse_steps(K, det, det_inv, K_inv):
-    st.subheader("3. Invers Matriks K (K⁻¹ mod 26)")
+        return K_inv, det, det_inv
+    
+    def display_inverse_steps(K, det, det_inv, K_inv):
+        st.subheader("3. Invers Matriks K (K⁻¹ mod 26)")
 
     # Kalau invers tidak ada → hanya tampilkan notifikasi
     if K_inv is None:
