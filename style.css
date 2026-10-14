@@ -30,8 +30,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
-    background-color: #eaf4fb;   /* warna dasar biru sangat muda */
     background-image:
         /* Garis vertikal */
         linear-gradient(to right, rgba(80, 150, 200, 0.15) 1px, transparent 1px),
