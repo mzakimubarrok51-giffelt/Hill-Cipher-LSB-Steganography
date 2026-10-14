@@ -43,6 +43,9 @@
 }
 
 [data-testid=stSidebar]{
+    width: 280px !important;
+    min-width: 280px !important;
+    max-width: 280px !important;
     color: rgb(225, 225, 225);
 }
 
