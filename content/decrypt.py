@@ -39,17 +39,29 @@ def decryption():
     def display_inverse_steps(K, det, det_inv, K_inv):
         st.subheader("3. Invers Matriks K (K⁻¹ mod 26)")
 
-    # Kalau invers tidak ada → hanya tampilkan notifikasi
-    if K_inv is None:
-        det_mod = det % 26
-        st.error(
-            f"Matriks K tidak memiliki invers modulo 26 "
-            f"(det = {det}, det mod 26 = {det_mod})."
-        )
-        return
+        # Kalau invers tidak ada → hanya tampilkan notifikasi
+        if K_inv is None:
+            det_mod = det % 26
+            st.error(
+                f"Matriks K tidak memiliki invers modulo 26 "
+                f"(det = {det}, det mod 26 = {det_mod})."
+            )
+            return
 
-    # Kalau invers ada → hanya tampilkan hasil K⁻¹
-    display_matrix(K_inv)
+        # Kalau invers ada → hanya tampilkan hasil K⁻¹
+        display_matrix(K_inv)
+
+        K = key_setup()
+            
+        if K is None:
+            st.stop()
+            
+        K_inv, det, det_inv = inverse_matrix(K)   
+        
+        if K_inv is None:
+            st.stop()
+
+
 
     def ciphertext_matrix():
         text = st.text_area(
