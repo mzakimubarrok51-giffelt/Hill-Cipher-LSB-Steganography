@@ -42,22 +42,7 @@ def decryption():
         return K_inv, det, det_inv
         
     def display_inverse_steps(K, det, det_inv, K_inv):
-        st.subheader("3. Invers Matriks K (K⁻¹ mod 26)")
-
-        st.markdown(
-            "Rumus invers matriks modulo 26:"
-        )
-        st.latex(
-            r"K^{-1} = \dfrac{1}{\det(K)} \cdot \text{adj}(K) \pmod{26}"
-        )
-
-        # Tampilkan determinan
-        col1, col2 = st.columns(2)
-        with col1:
-            st.metric("det(K)", det)
-        with col2:
-            st.metric("det(K)⁻¹ mod 26", det_inv)
-
+       
         # Tampilkan K⁻¹
         st.markdown("**Hasil K⁻¹:**")
         display_matrix(K_inv)
