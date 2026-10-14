@@ -36,12 +36,6 @@
     background-size: 40px 40px; /* ukuran kotak */
 }
 
-[data-testid="stAppViewContainer"],
-[data-testid="stHeader"],
-[data-testid="stMain"] {
-    background-color: transparent !important;
-}
-
 [data-testid=stSidebar]{
     color: rgb(225, 225, 225);
 }
