@@ -33,7 +33,7 @@
     background-image: 
     linear-gradient(to right, #80808050 0.5px, transparent 0.2px),
     linear-gradient(to bottom, #80808050 0.5px, transparent 0.2px);
-    background-size: 40px 40px; /* ukuran kotak */
+    
 }
 
 [data-testid="stAppViewContainer"],
