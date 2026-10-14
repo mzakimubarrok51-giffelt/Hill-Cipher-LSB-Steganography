@@ -27,7 +27,6 @@
     color: black;
 }
 [data-testid=stApp]{
-    background-image: url("https://wallpaperaccess.com/full/6302899.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
