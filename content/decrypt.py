@@ -18,6 +18,11 @@ def decryption():
         try:
             det_inv = pow(det_mod, -1, 26)
         except ValueError:
+            st.error(
+                f"Determinan = {det} (mod 26 = {det_mod}) "
+                f"tidak memiliki invers modulo 26. "
+                f"Matriks K tidak dapat di-invers."
+            )
             return None, det, None
 
         # Hitung matriks kofaktor
@@ -35,33 +40,40 @@ def decryption():
         K_inv = np.array(K_inv, dtype=int)
 
         return K_inv, det, det_inv
-    
+        
     def display_inverse_steps(K, det, det_inv, K_inv):
         st.subheader("3. Invers Matriks K (K⁻¹ mod 26)")
 
-        # Kalau invers tidak ada → hanya tampilkan notifikasi
-        if K_inv is None:
-            det_mod = det % 26
-            st.error(
-                f"Matriks K tidak memiliki invers modulo 26 "
-                f"(det = {det}, det mod 26 = {det_mod})."
-            )
-            return
+        st.markdown(
+            "Rumus invers matriks modulo 26:"
+        )
+        st.latex(
+            r"K^{-1} = \dfrac{1}{\det(K)} \cdot \text{adj}(K) \pmod{26}"
+        )
 
-        # Kalau invers ada → hanya tampilkan hasil K⁻¹
+        # Tampilkan determinan
+        col1, col2 = st.columns(2)
+        with col1:
+            st.metric("det(K)", det)
+        with col2:
+            st.metric("det(K)⁻¹ mod 26", det_inv)
+
+        # Tampilkan K⁻¹
+        st.markdown("**Hasil K⁻¹:**")
         display_matrix(K_inv)
 
-        K = key_setup()
-            
-        if K is None:
-            st.stop()
-            
-        K_inv, det, det_inv = inverse_matrix(K)   
-        
-        if K_inv is None:
-            st.stop()
+        # Verifikasi K · K⁻¹ ≡ I (mod 26)
+        st.markdown("**Verifikasi:** $K \\cdot K^{-1} \\pmod{26}$")
+        identity_check = (K @ K_inv) % 26
+        display_matrix(identity_check)
 
-
+        if np.array_equal(identity_check, np.eye(K.shape[0], dtype=int)):
+            st.success("Verifikasi berhasil: K · K⁻¹ = I (mod 26)")
+        else:
+            st.warning(
+                "Hasil perkalian bukan matriks identitas. "
+                "Periksa kembali matriks K."
+            )
 
     def ciphertext_matrix():
         text = st.text_area(
