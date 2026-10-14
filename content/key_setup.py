@@ -66,7 +66,7 @@ def key_setup():
 
         # 4) Simpan ke session_state
         st.session_state["hill_key"] = np.array(rows, dtype=int)
-        st.success("✅ Kunci berhasil disimpan. Berlaku untuk Encryption & Decryption.")
+        # ❌ Notifikasi sukses dihapus
 
     # ── Tampilkan kunci yang sedang aktif ──
     K = get_key()
@@ -78,9 +78,6 @@ def key_setup():
             display += r" \\ "
         display += r"\end{bmatrix}"
         st.latex(display)
-
-        if st.button("🗑️ Hapus Kunci", key="clear_key_btn"):
-            st.session_state["hill_key"] = None
-            st.rerun()
+        # ❌ Tombol "Hapus Kunci" dihapus
 
     return K
