@@ -30,6 +30,10 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    background-image: 
+    linear-gradient(to right, #ccc 1px, transparent 1px),
+    linear-gradient(to bottom, #ccc 1px, transparent 1px);
+    background-size: 40px 40px; /* ukuran kotak */
 }
 
 [data-testid="stAppViewContainer"],
