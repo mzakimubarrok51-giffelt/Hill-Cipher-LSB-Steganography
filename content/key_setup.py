@@ -64,23 +64,16 @@ def key_setup():
             st.error(f"⚠️ Setiap baris harus memiliki tepat {size} elemen.")
             return
 
-        # 4) Simpan ke session_state
-        st.session_state["hill_key"] = np.array(rows, dtype=int)
-        st.success("✅ Kunci berhasil disimpan. Berlaku untuk Encryption & Decryption.")
-
     # ── Tampilkan kunci yang sedang aktif ──
     K = get_key()
-    if K is not None:
-        st.markdown("**Kunci aktif saat ini:**")
-        display = r"\begin{bmatrix}"
-        for r in K:
-            display += " & ".join(map(str, r))
-            display += r" \\ "
-        display += r"\end{bmatrix}"
-        st.latex(display)
+    display = r"\begin{bmatrix}"
 
-        if st.button("🗑️ Hapus Kunci", key="clear_key_btn"):
-            st.session_state["hill_key"] = None
-            st.rerun()
+    for r in K:
+        display += " & ".join(map(str, r))
+        display += r" \\ "
+
+    display += r"\end{bmatrix}"
+
+    st.latex(display)
 
     return K
