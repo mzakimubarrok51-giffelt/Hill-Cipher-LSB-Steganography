@@ -65,7 +65,7 @@ def lsb():
     <h4>🙋‍♂️ Bagaimana cara kerja LSB?</h4>
     <p>
         Secara umum, proses LSB terdiri dari tiga tahap.
-        <div style="color: #000;">
+        <div style="color: #ffffff;">
             <div style="background-color: rgb(38, 39, 40); display: flex; border-radius: 10px">
                 <img src="https://images.openai.com/static-rsc-4/vYfLkrbI7PFINKDmtp-Tr0kvNqzuoA2ve13bvw7sMeW07DTUR76GZ1ze_gpNkVC6GsGlbvpDcQMpdorer71y8p5W7vGsZeSTYckf2UuuPiufg85qOaYTn3NHbsqUt41ARPDRIVnlXdiHUQvdgz9t7dCCYSwf3q1ddd1lz12IBpsx4Bd4vz2SJo_cINAeKpFt?purpose=fullsize", 
                 width=110px, style="margin-left: 10px;">
