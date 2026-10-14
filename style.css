@@ -33,8 +33,9 @@
     background-size: cover;
 }
 
-[data-testid=stSidebar]{
-    color: rgb(225, 225, 225);
+[data-testid="stSidebar"] {
+    background-color: #FFFFFF;
+    color: #1a1a1a;
 }
 
 .footer{
@@ -55,4 +56,11 @@
     font-weight: bold;
     font-size: 12px;
     font-style: italic;
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-testid="stSidebar"] {
+        background-color: #1e1e2e;
+        color: #e1e1e1;
+    }
 }
