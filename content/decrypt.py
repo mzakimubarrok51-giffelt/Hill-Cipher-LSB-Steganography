@@ -42,6 +42,7 @@ def decryption():
         return K_inv, det, det_inv
         
     def display_inverse_steps(K, det, det_inv, K_inv):
+        st.subheader("Hasil Invers Matriks K")
        
         # Tampilkan K⁻¹
         st.markdown("**Hasil K⁻¹:**")
