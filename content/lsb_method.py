@@ -65,8 +65,8 @@ def lsb():
     <h4>🙋‍♂️ Bagaimana cara kerja LSB?</h4>
     <p>
         Secara umum, proses LSB terdiri dari tiga tahap.
-        <div style="color: #ffffff;">
-            <div style="background-color: #000; display: flex; border-radius: 10px">
+        <div style="color: #000;">
+            <div style="background-color: rgb(38, 39, 40); display: flex; border-radius: 10px">
                 <img src="https://images.openai.com/static-rsc-4/vYfLkrbI7PFINKDmtp-Tr0kvNqzuoA2ve13bvw7sMeW07DTUR76GZ1ze_gpNkVC6GsGlbvpDcQMpdorer71y8p5W7vGsZeSTYckf2UuuPiufg85qOaYTn3NHbsqUt41ARPDRIVnlXdiHUQvdgz9t7dCCYSwf3q1ddd1lz12IBpsx4Bd4vz2SJo_cINAeKpFt?purpose=fullsize", 
                 width=110px, style="margin-left: 10px;">
                 <div style="margin-left: 10px">
@@ -76,10 +76,10 @@ def lsb():
                     </p>
                 </div>
             </div>
-            <div style="color: #000; font-size: 50px; text-align: center">
+            <div style="color: rgb(38, 39, 40); font-size: 50px; text-align: center">
                 &#11015
             </div>
-            <div style="background-color: #000; display: flex; border-radius: 10px">
+            <div style="background-color: rgb(38, 39, 40); display: flex; border-radius: 10px">
                 <img src="https://images.openai.com/static-rsc-4/x53CBMsL8LDuL8C1s4uW2Y84W4eZb-h9zrdC-HcHmsfhVf1md2iCNt6Yz6nh2P_Hg1I2fy69XI72s658LKaFZB7RjXpmRl-YAJfGeUv-C2NIJ0Ygea7A1PbpOiY0aqOHOXSlHiQe_sJ_I88kZD93Z7ufxy8oxSdWO8B0HRuJjKYsjWPPHkQSHDIgorzr_OlV?purpose=fullsize", 
                 width=110px, style="margin-left: 10px;">
                 <div style="margin-left: 10px">
@@ -89,10 +89,10 @@ def lsb():
                     </p>
                 </div>
             </div>
-            <div style="color: #000; font-size: 50px; text-align: center">
+            <div style="color: rgb(38, 39, 40); font-size: 50px; text-align: center">
                 &#11015
             </div>
-            <div style="background-color: #000; display: flex; border-radius: 10px">
+            <div style="background-color: rgb(38, 39, 40); display: flex; border-radius: 10px">
                 <img src="https://images.openai.com/static-rsc-4/6kOJAJW4C8IQkD_f26P3shqn4sOOb02oKIi8V67YDsfgCeWWEE1xQ-Tdi8c3xZu2UrBhy6EhILnP81-6bI16lpKgfXy75DZ-V819Ezq3VnH8l5SIw_HoIYP1rtpKheNrB_FYpUU-p-nxCBVZVXlOlOcwa4ynaeo8iKBbbYG4shcuAcVi9i5Q3ptsO1mxcUWk?purpose=fullsize", 
                 width=110px, style="margin-left: 10px;">
                 <div style="margin-left: 10px">
